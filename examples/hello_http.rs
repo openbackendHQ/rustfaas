@@ -1,8 +1,8 @@
 use log::debug;
 use std::sync::Arc;
 
-use openfaas_runtime::http;
-use openfaas_runtime::http::Request;
+use rustfaas::http;
+use rustfaas::http::Request;
 
 use hyper::body::to_bytes;
 
@@ -85,4 +85,3 @@ async fn main() {
     // Invoke the runtime
     http::run(handler).await;
 }
-Footer

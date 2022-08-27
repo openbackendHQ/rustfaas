@@ -4,7 +4,7 @@ use log::debug;
 
 use serde::Deserialize;
 
-use openfaas_runtime::Error;
+use rustfaas::Error;
 
 struct Greeter {
     greet: String,
@@ -54,7 +54,7 @@ async fn main() -> Result<(), Error> {
     let handler = move |req: Person| handler(req, greeter.clone());
 
     // Invoke the runtime
-    openfaas_runtime::run(handler).await?;
+    rustfaas::run(handler).await?;
 
     Ok(())
 }
